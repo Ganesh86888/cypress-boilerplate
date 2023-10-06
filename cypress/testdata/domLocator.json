@@ -1,0 +1,5 @@
+{
+    "homePage":{
+        "gmailText":"div[class=\"header__container\"] > a > span"
+    }
+}
