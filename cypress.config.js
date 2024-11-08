@@ -1,14 +1,17 @@
 const { defineConfig } = require("cypress");
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
+const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 
 module.exports = defineConfig({
-  env:{
-    url:"https://google.com"
-  },
   e2e: {
+    baseUrl: "https://magento.softwaretestingboard.com/",
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+        on("file:preprocessor", createBundler({plugins: [createEsbuildPlugin.default(config)],}));
+        preprocessor.addCucumberPreprocessorPlugin(on, config);
+        return config;
     },
-    specPattern: 'cypress/e2e/*.{js,jsx,ts,tsx}'
-  },
-  
-});
+    specPattern: "**/*.feature",
+    numTestsKeptInMemory: 0
+}
+})

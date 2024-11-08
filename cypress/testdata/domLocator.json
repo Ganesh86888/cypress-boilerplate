@@ -1,5 +1,36 @@
 {
     "homePage":{
-        "gmailText":"div[class=\"header__container\"] > a > span"
+        "createAccount":"div[class*='panel header'] > ul > li:nth-child(4) > a",
+        "signinAccount":"div[class*='panel header'] > ul > li:nth-child(2) > a"
+    },
+    "SignupPage":{
+        "createAccountTitle":"h1[class='page-title'] > span",
+        "firstNameTextBox":"#firstname",
+        "lastNameTextBox":"#lastname",
+        "emailAddressField":"#email_address",
+        "passwordField":"#password",
+        "passwordStrengthMeter":"#password-strength-meter",
+        "passwordConfirmationField":"#password-confirmation",
+        "createButton":"button[title='Create an Account']",
+        "errorMessage":{
+            "firstNameError":"#firstname-error",
+            "emailAddressError":"#email_address-error",
+            "lastNameError":"#lastname-error",
+            "passwordError":"#password-error",
+            "confirmPasswordError":"#password-confirmation-error",
+            "passwordMeterLabel":"#password-strength-meter-label"
+        },
+        "registrationConfirmationAlert":"div[class='messages'] > div > div",
+        "verifyCustomerName":"div[class='panel header'] > ul > li:nth-child(1) > span",
+        "accountInformation":"div[class='block block-dashboard-info'] > div > strong",
+        "contactInformation":"div[class='box box-information'] > strong > span"
+
+    },
+    "SignInPage":{
+        "signInPageTitle":"h1[class='page-title'] > span",
+        "signInButton":"fieldset[class='fieldset login'] button",
+        "emailAddressField":"#email",
+        "passwordField":"#pass",
+        "verifyCustomerName":"div[class='panel header'] > ul > li:nth-child(1) > span"
     }
 }
